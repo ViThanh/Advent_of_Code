@@ -52,15 +52,15 @@ calculateClosestIntersectionDistance <- function(T1, T2, on = c("x", "y"),
 }
 
 # EXAMPLES
-W1 <- c("R75","D30","R83","U83","L12","D49","R71","U7","L72")
-W2 <- c("U62","R66","U55","R34","D71","R55","D58","R83")
+W1 <- c("R75", "D30", "R83", "U83", "L12", "D49", "R71", "U7", "L72")
+W2 <- c("U62", "R66", "U55", "R34", "D71", "R55", "D58", "R83")
 T1 <- calculateCoordinates(W1)
 T2 <- calculateCoordinates(W2)
 # Result should be 159
 calculateClosestIntersectionDistance(T1, T2)
 
-W1 <- c("R98","U47","R26","D63","R33","U87","L62","D20","R33","U53","R51")
-W2 <- c("U98","R91","D20","R16","D67","R40","U7","R15","U6","R7")
+W1 <- c("R98", "U47", "R26", "D63", "R33", "U87", "L62", "D20", "R33", "U53", "R51")
+W2 <- c("U98", "R91", "D20", "R16", "D67", "R40", "U7", "R15", "U6", "R7")
 T1 <- calculateCoordinates(W1)
 T2 <- calculateCoordinates(W2)
 # Result should be 135
@@ -74,15 +74,15 @@ calculateClosestIntersectionDistance(coordinates$W1, coordinates$W2)
 # --- Part Two ---
 # ============================================================================ #
 # EXAMPLES
-W1 <- c("R75","D30","R83","U83","L12","D49","R71","U7","L72")
-W2 <- c("U62","R66","U55","R34","D71","R55","D58","R83")
+W1 <- c("R75", "D30", "R83", "U83", "L12", "D49", "R71", "U7", "L72")
+W2 <- c("U62", "R66", "U55", "R34", "D71", "R55", "D58", "R83")
 T1 <- calculateCoordinates(W1)
 T2 <- calculateCoordinates(W2)
 # Result should be 610
 calculateClosestIntersectionDistance(T1, T2, method = "step")
 
-W1 <- c("R98","U47","R26","D63","R33","U87","L62","D20","R33","U53","R51")
-W2 <- c("U98","R91","D20","R16","D67","R40","U7","R15","U6","R7")
+W1 <- c("R98", "U47", "R26", "D63", "R33", "U87", "L62", "D20", "R33", "U53", "R51")
+W2 <- c("U98", "R91", "D20", "R16", "D67", "R40", "U7", "R15", "U6", "R7")
 T1 <- calculateCoordinates(W1)
 T2 <- calculateCoordinates(W2)
 # Result should be 410
