@@ -56,7 +56,7 @@ print(Intcode([1002,4,3,4,33]))
 print(Intcode([1101,100,-1,4,0]))
 
 # Solution
-programInput = loadtxt("Day5Input.txt", delimiter = ",").astype(int)
+programInput = loadtxt("Day5Input.txt", delimiter = ",", dtype = int)
 print(Intcode(programInput, inputValue = 1))
 
 # =============================================================================
@@ -116,5 +116,5 @@ print(Intcode(testProgramInput, inputValue = 8))
 print(Intcode(testProgramInput, inputValue = 9))
 
 # Solution
-programInput = loadtxt("Day5Input.txt", delimiter = ",").astype(int)
+programInput = loadtxt("Day5Input.txt", delimiter = ",", dtype = int)
 print(Intcode(programInput, inputValue = 5))
