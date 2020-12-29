@@ -40,7 +40,7 @@ def Intcode(programInput, inputValue = None):
                 x[positions[2]] = x[positions[0]] * x[positions[1]]
             pos += 4
         elif opcode in [3, 4]:
-            if opcode== 3:
+            if opcode == 3:
                 x[positions[0]] = inputValue
             elif opcode == 4:
                 if (x[positions[0]] == 0) and (x[pos + 2] % 100 != 99):
@@ -79,7 +79,7 @@ def Intcode(programInput, inputValue = None):
                 x[positions[2]] = (x[positions[0]] == x[positions[1]]) * 1
             pos += 4
         elif opcode in [3, 4]:
-            if opcode== 3:
+            if opcode == 3:
                 x[positions[0]] = inputValue
             elif opcode == 4:
                 if (x[positions[0]] == 0) and (x[pos + 2] % 100 != 99):
