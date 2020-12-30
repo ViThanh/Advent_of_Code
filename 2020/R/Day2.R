@@ -1,7 +1,7 @@
 # ============================================================================ #
-# Topic : Advent of Code
-# Day   : 1
-# Theme : Report Repair
+# Topic : Advent of Code 2020
+# Day   : 2
+# Theme : Password Philosophy
 # ============================================================================ #
 library(data.table)
 library(stringr)
@@ -29,10 +29,6 @@ sum(policy_passwords$allowed)
 # Each policy describes two positions in the password, where 1 means the first 
 # character, 2 means the second character, and so on
 # Exactly one of these positions must contain the given letter
-for(i in 1:nrow(policy_passwords)){
-  letters <- strsplit(policy_passwords$password[i], '')[[1]]
-  pattern <- policy_passwords$V3[i]
-  policy_passwords$allowed[i] <- xor(letters[policy_passwords$V1[i]] == pattern,
-                                     letters[policy_passwords$V2[i]] == pattern)
-}
+policy_passwords[, allowed := xor(substr(password, V1, V1) == V3,
+                                  substr(password, V2, V2) == V3)]
 sum(policy_passwords$allowed)
