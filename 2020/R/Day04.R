@@ -4,7 +4,7 @@
 # Theme : Passport Processing
 # ============================================================================ #
 library(data.table)
-input <- read.csv('~/Advent of Code/2020/Assignments/Day4Input.txt',
+input <- read.csv('~/Advent of Code/2020/Assignments/Day04Input.txt',
                   header = F, blank.lines.skip = F)
 
 # ============================================================================ #
@@ -41,7 +41,7 @@ passports[, valid := sapply(V1, function(x, y) {
 sum(passports$valid)
 
 # ============================================================================ #
-# --- Part Two ---
+# Part Two
 # ============================================================================ #
 # Each field has strict rules about what values are valid for automatic validation:
 # - byr (Birth Year) - four digits; at least 1920 and at most 2002

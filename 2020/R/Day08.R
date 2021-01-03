@@ -4,7 +4,7 @@
 # Theme : Handheld Halting
 # ============================================================================ #
 library(data.table)
-input <- read.csv('~/Advent of Code/2020/Assignments/Day8Input.txt', header = F)[[1]]
+input <- read.csv('~/Advent of Code/2020/Assignments/Day08Input.txt', header = F)[[1]]
 
 # ============================================================================ #
 # Part One

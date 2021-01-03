@@ -5,7 +5,7 @@
 # ============================================================================ #
 library(data.table)
 library(dplyr)
-input <- read.csv('~/Advent of Code/2020/Assignments/Day7Input.txt', header = F, sep = ".")[[1]]
+input <- read.csv('~/Advent of Code/2020/Assignments/Day07Input.txt', header = F, sep = ".")[[1]]
 
 # ============================================================================ #
 # Part One
@@ -35,7 +35,7 @@ rules_all <- as.data.table(rules_all)[, shiny_gold := apply(rules_all[, -c('rule
 uniqueN(rules_all[shiny_gold == T, outer])
 
 # ============================================================================ #
-# --- Part Two ---
+# Part Two
 # ============================================================================ #
 #  Calculate how many individual bags are required inside a shiny gold bag
 rules_all <- as.data.table(rules)[is.na(inner), inner_bags := 0]

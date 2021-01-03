@@ -3,7 +3,7 @@
 # Day   : 1
 # Theme : Report Repair
 # ============================================================================ #
-input <- read.csv('~/Advent of Code/2020/Assignments/Day1Input.txt', header = F)[[1]]
+input <- read.csv('~/Advent of Code/2020/Assignments/Day01Input.txt', header = F)[[1]]
 
 # ============================================================================ #
 # Part One
@@ -14,7 +14,7 @@ combn(input, n, prod)[which(combn(input, n, sum) == 2020)]
 
 
 # ============================================================================ #
-# --- Part Two ---
+# Part Two
 # ============================================================================ #
 # Find a product of the three elements in the input, that adds up to 2020
 n <- 3

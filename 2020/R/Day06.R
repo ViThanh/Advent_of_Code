@@ -4,7 +4,7 @@
 # Theme : Custom Customs
 # ============================================================================ #
 library(data.table)
-input <- read.csv('~/Advent of Code/2020/Assignments/Day6Input.txt', 
+input <- read.csv('~/Advent of Code/2020/Assignments/Day06Input.txt', 
                   header = F, blank.lines.skip = F)[[1]]
 
 # ============================================================================ #
@@ -18,7 +18,7 @@ form[, count := sapply(yes, function(x) length(unique(strsplit(x, '')[[1]])))]
 sum(form$count)
 
 # ============================================================================ #
-# --- Part Two ---
+# Part Two
 # ============================================================================ #
 # For each group, count the number of questions to which everyone answered "yes"
 # Calculate the sum of these counts

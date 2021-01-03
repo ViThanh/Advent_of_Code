@@ -5,7 +5,7 @@
 # ============================================================================ #
 library(data.table)
 library(stringr)
-input <- read.csv('~/Advent of Code/2020/Assignments/Day2Input.txt', header = F)[[1]]
+input <- read.csv('~/Advent of Code/2020/Assignments/Day02Input.txt', header = F)[[1]]
 
 # ============================================================================ #
 # Part One
@@ -23,7 +23,7 @@ policy_passwords[, allowed := between(str_count(password, V3), V1, V2)]
 sum(policy_passwords$allowed)
 
 # ============================================================================ #
-# --- Part Two ---
+# Part Two
 # ============================================================================ #
 # Calculate the number of valid passwords in the input
 # Each policy describes two positions in the password, where 1 means the first 

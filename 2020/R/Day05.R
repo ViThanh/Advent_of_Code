@@ -4,7 +4,7 @@
 # Theme : Binary Boarding
 # ============================================================================ #
 library(data.table)
-input <- read.csv('~/Advent of Code/2020/Assignments/Day5Input.txt', header = F)[[1]]
+input <- read.csv('~/Advent of Code/2020/Assignments/DayO5Input.txt', header = F)[[1]]
 
 # ============================================================================ #
 # Part One
@@ -22,7 +22,7 @@ boarding_passes[, seat_ID := row_number * 8 + column]
 max(boarding_passes$seat_ID)
 
 # ============================================================================ #
-# --- Part Two ---
+# Part Two
 # ============================================================================ #
 # FInd the missing seat ID, for which there are seat IDs one bigger and one smaller
 setdiff(min(boarding_passes$seat_ID):max(boarding_passes$seat_ID), boarding_passes$seat_ID)

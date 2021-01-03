@@ -3,7 +3,7 @@
 # Day   : 3
 # Theme : Toboggan Trajectory
 # ============================================================================ #
-input <- read.csv('~/Advent of Code/2020/Assignments/Day3Input.txt', header = F)[[1]]
+input <- read.csv('~/Advent of Code/2020/Assignments/Day03Input.txt', header = F)[[1]]
 
 # ============================================================================ #
 # Part One
@@ -26,7 +26,7 @@ EncounteredTrees(c(1, 3), input)
 
 
 # ============================================================================ #
-# --- Part Two ---
+# Part Two
 # ============================================================================ #
 # Multiply the number of trees form the following slopes:
 # - Right 1, down 1.
