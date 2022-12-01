@@ -29,3 +29,4 @@ calories <- diff(calories)
 cat("The Elf carrying the most calories is carrying", max(calories), "calories.\n")
 
 # Part Two ----------------------------------------------------------------
+cat("The three Elves carrying the most calories are carrying", sum(sort(calories, decreasing = T)[1:3]), "calories in total.\n")
