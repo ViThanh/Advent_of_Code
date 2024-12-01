@@ -11,17 +11,24 @@ input <- aoc_get_response(5, year = 2015, session_cookie = keyring::key_get("RSt
   readr::read_lines()
 
 # Part 1 ------------------------------------------------------------------
-AdventCoinFinder <- \(input, start){
-  stop_while <- FALSE
-  x <- 0
-  while(!stop_while){
-    x <- x + 1
-    md5 <- digest::digest(paste0(input, x), algo = "md5", serialize = FALSE)
-    stop_while <- substr(md5, 1, nchar(start)) == start
-  }
-  return(x)
-}
-cat("The lowest positive number that Santa needs is", AdventCoinFinder(input, "00000"))
+nice <- sapply(input, \(x){
+  vowels <- stringr::str_count(x, pattern = "[aeiou]") >= 3
+  double <- strsplit(x, "")[[1]]
+  double <- any(double[-1] == double[-length(double)])
+  specific <- grepl("(ab)|(cd)|(pq)|(xy)", x)
+  vowels & double & (!specific)
+})
+cat(sum(nice), "strings are nice")
 
 # Part 2 ------------------------------------------------------------------
-cat("The lowest positive number that Santa needs is", AdventCoinFinder(input, "000000"))
+nice <- sapply(input, \(x){
+  split <- strsplit(x, "")[[1]]
+  double <- any(split[-(1:2)] == split[-(length(split) - (0:1))])
+  pairs <- paste0(split[-length(split)], split[-1])
+  pairs <- any(sapply(pairs, \(y){
+    positions <- which(pairs == y)
+    (length(positions) > 1) & any(diff(positions) > 1)
+  }))
+  double & pairs
+})
+cat(sum(nice), "strings are nice")
