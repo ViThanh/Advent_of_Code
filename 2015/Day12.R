@@ -17,6 +17,25 @@ numbers <- as.numeric(grep("[0-9]", unlisted, value = TRUE))
 cat("The sum of all numbers in the document is", sum(numbers), "\n")
 
 # Part 2 ------------------------------------------------------------------
-red <- names(unlisted)[unlisted == "red"]
-numbers <- as.numeric(grep("[0-9]", unlisted[!(names(unlisted) %in% red)], value = TRUE))
+fixed_input <- input
+while(grepl("red", fixed_input)){
+  idx <- regexpr("red", fixed_input)
+  input_split <- strsplit(fixed_input, "")[[1]]
+  input_split_pre <- rev(input_split[1:idx])
+  input_split_post <- input_split[idx:length(input_split)]
+  arr <- which(cumsum(input_split_pre == "[") > cumsum(input_split_pre == "]"))[1]
+  obj <- which(cumsum(input_split_pre == "{") > cumsum(input_split_pre == "}"))[1]
+  if(is.na(obj)) obj <- Inf
+  if(arr < obj){
+    input_split <- input_split[-(idx + 1:2)]
+    input_split[idx] <- 0
+  }else{
+    obj_end <- which(cumsum(input_split_post == "}") > cumsum(input_split_post == "{"))[1]
+    input_split <- c(rev(input_split_pre[-(1:obj)]), 0, input_split_post[-(1:obj_end)])
+  }
+  fixed_input <- paste(input_split, collapse = "")
+}
+storage <- jsonlite::fromJSON(fixed_input)
+unlisted <- unlist(storage)
+numbers <- as.numeric(grep("[0-9]", unlisted, value = TRUE))
 cat("The sum of all numbers in the document is", sum(numbers), "\n")
